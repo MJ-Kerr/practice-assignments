@@ -1,5 +1,6 @@
-// import React from 'react';
-// import './App.css';
+import React, {useState} from 'react';
+
+import './App.css';
 
 // const PersonCard = (props) => {
 //   return (
@@ -14,3 +15,26 @@
 // <PersonCard firstName="John" lastName="Smith" age={8} hairColor="Brown" />
 
 // export default PersonCard;
+
+
+
+// ===========hooks=========
+
+const StatefulComponent = props => {
+    const [state, setState] = useState({
+        clickCount: 0
+    })
+    const clickHandler = e => {
+        console.log(state)
+        setState({
+            clickCount: state.clickCount + 1
+        })
+    }
+    return (
+        <div>
+            <button onClick={clickHandler}>you clicked me {state.clickCount} times!</button>
+        </div>
+    )
+}
+
+export default StatefulComponent;
